@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from './api.service'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'http-client';
-}
+
+  constructor(private apiService: ApiService){}
+  ngOnInit(){
+    this.apiService.getFacilities().subscribe((res)=>{
+      this.apiService.getFacilities(this.apiService.nextPage).subscribe((res)=>{
+        console.log(res);
+      });      
+    });
+  
+}}
