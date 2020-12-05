@@ -7,7 +7,7 @@ import { Facility } from './facility'
   providedIn: 'root'
 })
 export class ApiService {
-  apiURL: string = 'http://localhost:8081/api/';
+  apiURL: string = 'http://localhost:8080/api';
   public firstPage: string = "";
   public prevPage: string = "";
   public nextPage: string = "";
